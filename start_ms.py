@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     agents_per_process = 3
     num = 1
-    c = 0
+    c = 8080
     agents = list()
     for i in range(agents_per_process):
         port = int(num) + c
