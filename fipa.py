@@ -4,7 +4,7 @@ from pade.acl.aid import AID
 from pade.acl.messages import ACLMessage
 
 agent_r_name = 'agente_r_{}@localhost:{}'.format(8080, 8080)
-agent_s_name = 'agente_r_{}@localhost:{}'.format(8081, 8081)
+agent_s_name = 'agente_s_{}@localhost:{}'.format(8081, 8081)
 
 class Sender(Agent):
     def __init__(self,aid):
