@@ -31,7 +31,10 @@ class Receiver(Agent):
 
 if __name__ == '__main__':
     agent_r = Receiver(AID(name=agent_r_name))
+    agent_r.ams = {'name': 'localhost', 'port': 8081}
+
     agent_s = Sender(AID(name=agent_s_name))
+    agent_s.ams = {'name': 'localhost', 'port': 8082}
 
     start_loop([agent_r, agent_s])
 
