@@ -17,6 +17,7 @@ class Sender(Agent):
         message.set_protocol(ACLMessage.FIPA_REQUEST_PROTOCOL)
         message.add_receiver(AID(agent_r_name))
         message.set_content(100)
+        display_message(self.aid.localname, 'Sending Message to receiver: ' + str(message))
         self.send(message)
 
     def react(self, message):
