@@ -12,10 +12,11 @@ class AgenteHelloWorld(Agent):
 if __name__ == '__main__':
 
     agents_per_process = 3
+    num = 1
     c = 0
     agents = list()
     for i in range(agents_per_process):
-        port = int(argv[1]) + c
+        port = int(num) + c
         agent_name = 'agente_hello_{}@localhost:{}'.format(port, port)
         agente_hello = AgenteHelloWorld(AID(name=agent_name))
         agents.append(agente_hello)
