@@ -22,4 +22,4 @@ if __name__ == '__main__':
         agents.append(agente_hello)
         c += 1000
     
-    start_loop(agents, gui=True)
+    start_loop(agents)
