@@ -1,6 +1,24 @@
-# this is file start_mas.py
-from pade.misc.common import set_ams, start_loop
+from pade.misc.utility import display_message, start_loop
+from pade.core.agent import Agent
+from pade.acl.aid import AID
+from sys import argv
+
+class AgenteHelloWorld(Agent):
+    def __init__(self, aid):
+        super(AgenteHelloWorld, self).__init__(aid=aid)
+        display_message(self.aid.localname, 'Hello World!')
+
 
 if __name__ == '__main__':
-    set_ams('localhost', 8000)
-    start_loop(list(), gui=True)
+
+    agents_per_process = 3
+    c = 0
+    agents = list()
+    for i in range(agents_per_process):
+        port = int(argv[1]) + c
+        agent_name = 'agente_hello_{}@localhost:{}'.format(port, port)
+        agente_hello = AgenteHelloWorld(AID(name=agent_name))
+        agents.append(agente_hello)
+        c += 1000
+    
+    start_loop(agents)
