@@ -16,7 +16,7 @@ class Sender(Agent):
         message = ACLMessage(ACLMessage.INFORM)
         message.add_receiver(AID(agent_r_name))
         message.set_content('Hi')
-        for i in range(3):
+        for i in range(1000):
             self.send(message)
 
     def react(self, message):
