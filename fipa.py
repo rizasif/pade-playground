@@ -19,7 +19,7 @@ class Sender(Agent):
         self.send(message)
 
     def react(self, message):
-        display_message(self.aid.localname, 'Received Message: ' + message)
+        display_message(self.aid.localname, 'Received Message: ' + str(message))
 
 class Receiver(Agent):
     def __init__(self,aid):
@@ -27,7 +27,7 @@ class Receiver(Agent):
         display_message(self.aid.localname, 'Receiver Initialized')
 
     def react(self, message):
-        display_message(self.aid.localname, 'Received Message: ' + message)
+        display_message(self.aid.localname, 'Received Message: ' + str(message))
 
 if __name__ == '__main__':
     agent_r = Receiver(AID(name=agent_r_name))
