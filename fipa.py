@@ -16,10 +16,7 @@ class Sender(Agent):
         message = ACLMessage(ACLMessage.INFORM)
         message.add_receiver(AID(agent_r_name))
         message.set_content('Hi')
-        try:
-            self.send(message)
-        except:
-            display_message(self.aid.localname, 'Trying Again')
+        for i in range(3):
             self.send(message)
 
     def react(self, message):
