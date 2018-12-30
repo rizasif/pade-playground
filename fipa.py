@@ -14,6 +14,7 @@ class Sender(Agent):
     def on_start(self):
         display_message(self.aid.localname, 'Sending Message to receiver')
         message = ACLMessage(ACLMessage.INFORM)
+        message.set_protocol(ACLMessage.FIPA_REQUEST_PROTOCOL)
         message.add_receiver(AID(agent_r_name))
         message.set_content(100)
         self.send(message)
