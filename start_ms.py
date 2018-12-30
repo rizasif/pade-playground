@@ -13,7 +13,7 @@ if __name__ == '__main__':
 
     agents_per_process = 3
     num = 1
-    c = 8080
+    c = 9000
     agents = list()
     for i in range(agents_per_process):
         port = int(num) + c
@@ -22,4 +22,4 @@ if __name__ == '__main__':
         agents.append(agente_hello)
         c += 1000
     
-    start_loop(agents)
+    start_loop(agents, gui=True)
