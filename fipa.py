@@ -15,7 +15,7 @@ class Sender(Agent):
         display_message(self.aid.localname, 'Sending Message to receiver')
         message = ACLMessage(ACLMessage.INFORM)
         message.add_receiver(AID(agent_r_name))
-        message.set_content('Hi')
+        message.set_content(100)
         self.send(message)
 
     def react(self, message):
