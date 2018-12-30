@@ -3,8 +3,8 @@ from pade.core.agent import Agent
 from pade.acl.aid import AID
 from pade.acl.messages import ACLMessage
 
-agent_r_name = 'agente_r_{}@localhost:{}'.format(8080, 8080)
-agent_s_name = 'agente_s_{}@localhost:{}'.format(8081, 8081)
+agent_r_name = 'agente_r_{}@localhost:{}'.format(8081, 8081)
+agent_s_name = 'agente_s_{}@localhost:{}'.format(8082, 8082)
 
 class Sender(Agent):
     def __init__(self,aid):
@@ -16,8 +16,7 @@ class Sender(Agent):
         message = ACLMessage(ACLMessage.INFORM)
         message.add_receiver(AID(agent_r_name))
         message.set_content('Hi')
-        for i in range(1000):
-            self.send(message)
+        self.send(message)
 
     def react(self, message):
         display_message(self.aid.localname, 'Received Message: ' + message)
